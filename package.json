@@ -1,0 +1,27 @@
+{
+  "name": "amazon_ebay_crawler",
+  "version": "1.0.0",
+  "description": "private project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start server --name='crawler' --node-args='--harmony-async-await'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RusseLHuang/amazon_ebay_crawler.git"
+  },
+  "author": "russel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RusseLHuang/amazon_ebay_crawler/issues"
+  },
+  "homepage": "https://github.com/RusseLHuang/amazon_ebay_crawler#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}
