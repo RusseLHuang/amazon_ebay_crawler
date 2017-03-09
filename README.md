@@ -1,13 +1,11 @@
 ![Alt text](http://g.gravizo.com/g?
 @startuml;
 title Transaction - Sell BitCoin;
-
 participant CoolWallet as cw;
 participant App as app;
 participant User as u;
 participant Exchange as ex;
 participant Block_chain as bc;
-
 u->ex: Place sell order;
 ex->bc: check balance\n and open order;
 ex->ex: schedule scan open order balance;
@@ -56,30 +54,23 @@ app->u: notify;
 u->app: awake app;
 deactivate ex;
 app->ex: get trx ids, address%28es%29 ok token%28order ID%29;
-
 app-->u: wait for user\n confirmation%28Trx detail%29;
 u->app: confirm transaction\n %28with in 12 hours%29;
-
 app->cw: check trx authenticity\n%28login%29;
-
 app->cw: get transfer block\n and signature/;
 app->bc: submit transaction;
 app->ex: transaction submitted%28trx id%29;
 ex->ex: order state changed to\n 'waiting for transafer';
-
 note right of ex;
 %28waiting for\nconfirmation%29;
 end note;
-
 note right of ex;
 %28How to confirm,TBC%29;
 end note;
-
 ex->bc: 6 confirmations?;
 Activate ex;
 ex->ex: Order complete;
 ex->ex: trx fees and clearing;
 ex->ex: notification \n%28notification / email%29;
-
 @enduml
 )
