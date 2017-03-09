@@ -35,7 +35,6 @@ app->ex: cancel order;
 ex->ex: order canceled;
 end;
 deactivate app;
-
 alt balance scan;
 app->ex: update account addresses;
 ex->bc: check balance\n%28if ng, suspend all orders%29;
